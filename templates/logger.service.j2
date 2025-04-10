@@ -1,0 +1,12 @@
+[Unit]
+Description=Disk usage logger
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/log_disk_usage.sh /var/log/disk_usage.log
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
